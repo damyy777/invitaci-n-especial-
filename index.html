@@ -1,20 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Te gustaria salir conmigo?</title>
+    <title>🎂 Feliz Cumple Yoelcito 🎉</title>
+    <style>
+        body {
+            background-color: #ffccff; /* Fondo rosa */
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        /* 🎉 Serpentinas cayendo */
+        .serpentina {
+            position: absolute;
+            width: 10px;
+            height: 100px;
+            background: linear-gradient(to bottom, red, yellow, blue, green, purple);
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: fall 3s infinite linear;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); }
+            100% { transform: translateY(600px) rotate(360deg); }
+        }
+
+        /* 🌸 Flores animadas */
+        .flower {
+            position: absolute;
+            bottom: 20px;
+            width: 30px;
+            height: 30px;
+            background-color: pink;
+            border-radius: 50%;
+            animation: moveFlower 4s infinite alternate ease-in-out;
+        }
+
+        .flower::before,
+        .flower::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: yellow;
+            border-radius: 50%;
+        }
+
+        .flower::before { transform: translate(-15px, -15px); }
+        .flower::after { transform: translate(15px, -15px); }
+
+        @keyframes moveFlower {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-10px); }
+        }
+
+        /* 🌿 Césped */
+        .grass {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            background: green;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        /* 🎂 Torta */
+        .cake {
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 80px;
+            background: #8B4513; /* Marrón pastel */
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .cake::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 20px;
+            background: white; /* Crema */
+            top: -10px;
+            border-radius: 50%;
+        }
+
+        .candle {
+            position: absolute;
+            width: 10px;
+            height: 30px;
+            background: red;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .flame {
+            position: absolute;
+            width: 10px;
+            height: 15px;
+            background: orange;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            animation: flicker 0.5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        /* ✨ Números 20 en la torta */
+        .number {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* 📜 Mensaje */
+        .message {
+            font-size: 18px;
+            color: #ff3366;
+            margin-top: 20px;
+        }
+
+        /* ❤️ Botones */
+        .heart-button {
+            background-color: #ff6699;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        .heart-button:hover {
+            background-color: #ff3366;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="tenor-gif-embed" data-postid="2871482820979272488" data-share-method="host" data-aspect-ratio="1.28351" data-width="100%"><a href="https://tenor.com/view/mochi-pet-mochi-cat-cute-squiddy-gif-2871482820979272488">Mochi Pet GIF</a>from <a href="https://tenor.com/search/mochi-gifs">Mochi GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-        <h1>¿Te gustaria salir conmigo? 🥰</h1>
-        <p>Eres la persona mas especial del mundo</p>
-        <div class="btn">
-            <a href="si.html">SI</a>
-            <a href="no1.html">NO</a>
+
+    <!-- 🎉 Serpentinas cayendo -->
+    <div class="serpentina" style="left: 20px;"></div>
+    <div class="serpentina" style="left: 100px;"></div>
+    <div class="serpentina" style="left: 200px;"></div>
+    <div class="serpentina" style="left: 300px;"></div>
+    <div class="serpentina" style="left: 400px;"></div>
+
+    <!-- 🎂 Torta -->
+    <div class="cake">
+        <div class="number">20</div>
+        <div class="candle">
+            <div class="flame"></div>
         </div>
     </div>
+
+    <!-- 📜 Mensaje -->
+    <p class="message">
+        Tu novia, tu pana, tu mejor amiga, tu regetonera, tu ya tu sabe mano,  
+        te invita a un día de picnic hoy 11 de febrero.  
+        <br><br>
+        El código es llegar bien bien bonito (aunque ya lo sos).  
+        <br><br>  
+        Jalas o no jalas?
+    </p>
+
+    <!-- ❤️ Botones -->
+    <button class="heart-button" onclick="alert('¡Sabía que dirías sí! ❤️')">Sí</button>
+    <button class="heart-button" onclick="alert('No hay más opciones, así que igual jalas 😆❤️')">Sí (no hay más opciones)</button>
+
+    <!-- 🌸 Flores de colores -->
+    <div class="flower" style="left: 30%; background: pink;"></div>
+    <div class="flower" style="left: 50%; background: yellow;"></div>
+    <div class="flower" style="left: 70%; background: purple;"></div>
+
+    <!-- 🌿 Césped -->
+    <div class="grass"></div>
+
 </body>
 </html>
