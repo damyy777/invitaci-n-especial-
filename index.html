@@ -31,53 +31,58 @@
             100% { transform: translateY(600px) rotate(360deg); }
         }
 
-        /* 🌸 Flores animadas */
+        /* 🌸 Flores detalladas */
         .flower {
             position: absolute;
-            bottom: 20px;
-            width: 30px;
-            height: 30px;
-            background-color: pink;
-            border-radius: 50%;
-            animation: moveFlower 4s infinite alternate ease-in-out;
+            bottom: 60px;
+            width: 0;
+            height: 0;
         }
 
-        .flower::before,
-        .flower::after {
-            content: "";
+        .petal {
             position: absolute;
             width: 30px;
             height: 30px;
-            background-color: yellow;
+            background: red;
             border-radius: 50%;
         }
 
-        .flower::before { transform: translate(-15px, -15px); }
-        .flower::after { transform: translate(15px, -15px); }
+        .petal:nth-child(1) { transform: rotate(0deg) translate(15px); }
+        .petal:nth-child(2) { transform: rotate(45deg) translate(15px); }
+        .petal:nth-child(3) { transform: rotate(90deg) translate(15px); }
+        .petal:nth-child(4) { transform: rotate(135deg) translate(15px); }
+        .petal:nth-child(5) { transform: rotate(180deg) translate(15px); }
+        .petal:nth-child(6) { transform: rotate(225deg) translate(15px); }
+        .petal:nth-child(7) { transform: rotate(270deg) translate(15px); }
+        .petal:nth-child(8) { transform: rotate(315deg) translate(15px); }
 
-        @keyframes moveFlower {
-            0% { transform: translateY(0px); }
-            100% { transform: translateY(-10px); }
+        .flower-center {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: yellow;
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
         }
 
-        /* 🌿 Césped */
+        /* 🌿 Césped detallado */
         .grass {
             position: absolute;
             bottom: 0;
             width: 100%;
-            height: 50px;
-            background: green;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
+            height: 60px;
+            background: linear-gradient(to top, #228B22, #2E8B57);
+            clip-path: polygon(0% 100%, 5% 85%, 10% 100%, 15% 85%, 20% 100%, 25% 85%, 30% 100%, 35% 85%, 40% 100%, 45% 85%, 50% 100%, 55% 85%, 60% 100%, 65% 85%, 70% 100%, 75% 85%, 80% 100%, 85% 85%, 90% 100%, 95% 85%, 100% 100%);
         }
 
-        /* 🎂 Torta */
+        /* 🎂 Torta más linda */
         .cake {
             position: relative;
             display: inline-block;
-            width: 100px;
-            height: 80px;
-            background: #8B4513; /* Marrón pastel */
+            width: 120px;
+            height: 100px;
+            background: #8B4513;
             border-radius: 10px;
             margin-top: 30px;
         }
@@ -85,10 +90,10 @@
         .cake::before {
             content: "";
             position: absolute;
-            width: 100px;
-            height: 20px;
-            background: white; /* Crema */
-            top: -10px;
+            width: 120px;
+            height: 30px;
+            background: white;
+            top: -15px;
             border-radius: 50%;
         }
 
@@ -97,7 +102,7 @@
             width: 10px;
             height: 30px;
             background: red;
-            top: -30px;
+            top: -40px;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -122,7 +127,7 @@
         /* ✨ Números 20 en la torta */
         .number {
             position: absolute;
-            top: 15px;
+            top: 25px;
             left: 50%;
             transform: translateX(-50%);
             font-size: 24px;
@@ -137,17 +142,23 @@
             margin-top: 20px;
         }
 
-        /* ❤️ Botones */
+        /* ❤️ Botones en forma de corazón */
         .heart-button {
             background-color: #ff6699;
             color: white;
             border: none;
             padding: 15px;
             font-size: 18px;
-            border-radius: 50px;
+            border-radius: 50%;
             cursor: pointer;
             margin-top: 10px;
             margin-right: 10px;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
         }
 
         .heart-button:hover {
@@ -161,8 +172,6 @@
     <div class="serpentina" style="left: 20px;"></div>
     <div class="serpentina" style="left: 100px;"></div>
     <div class="serpentina" style="left: 200px;"></div>
-    <div class="serpentina" style="left: 300px;"></div>
-    <div class="serpentina" style="left: 400px;"></div>
 
     <!-- 🎂 Torta -->
     <div class="cake">
@@ -183,15 +192,19 @@
     </p>
 
     <!-- ❤️ Botones -->
-    <button class="heart-button" onclick="alert('¡Sabía que dirías sí! ❤️')">Sí</button>
-    <button class="heart-button" onclick="alert('No hay más opciones, así que igual jalas 😆❤️')">Sí (no hay más opciones)</button>
+    <button class="heart-button" onclick="alert('¡Sabía que dirías sí! ❤️')">❤️</button>
+    <button class="heart-button" onclick="alert('No hay más opciones, así que igual jalas 😆❤️')">❤️</button>
 
     <!-- 🌸 Flores de colores -->
-    <div class="flower" style="left: 30%; background: pink;"></div>
-    <div class="flower" style="left: 50%; background: yellow;"></div>
-    <div class="flower" style="left: 70%; background: purple;"></div>
+    <div class="flower" style="left: 30%;">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="flower-center"></div>
+    </div>
 
-    <!-- 🌿 Césped -->
+    <!-- 🌿 Césped detallado -->
     <div class="grass"></div>
 
 </body>
