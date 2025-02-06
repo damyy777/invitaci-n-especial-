@@ -1,137 +1,20 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎂 ¡Feliz Cumple Yoelcito! 🎉</title>
-    <style>
-        body {
-            background-color: #ffccff; /* Fondo rosa pastel */
-            text-align: center;
-            font-family: 'Arial', sans-serif;
-            overflow: hidden;
-        }
-
-        /* 🎂 Imagen de la torta o Clarence moviéndose lento */
-        .cake {
-            width: 250px;
-            animation: moveCake 5s infinite alternate ease-in-out;
-        }
-
-        @keyframes moveCake {
-            0% { transform: translateY(0px); }
-            100% { transform: translateY(-20px); }
-        }
-
-        /* 🎉 Animación de serpentinas cayendo */
-        .serpentina {
-            position: absolute;
-            width: 10px;
-            height: 100px;
-            background: linear-gradient(to bottom, red, yellow, blue, green, purple);
-            border-radius: 50%;
-            opacity: 0.7;
-            animation: fall 3s infinite linear;
-        }
-
-        @keyframes fall {
-            0% { transform: translateY(-100px) rotate(0deg); }
-            100% { transform: translateY(600px) rotate(360deg); }
-        }
-
-        /* 🌼 Flores creadas con CSS */
-        .flower {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 20px;
-            height: 20px;
-            background-color: pink;
-            border-radius: 50%;
-            animation: grow 3s forwards ease-in-out;
-        }
-
-        .flower::before,
-        .flower::after {
-            content: "";
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: pink;
-            border-radius: 50%;
-        }
-
-        .flower::before {
-            transform: translate(-10px, -10px);
-        }
-
-        .flower::after {
-            transform: translate(10px, -10px);
-        }
-
-        @keyframes grow {
-            0% { transform: scale(0); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        /* 💖 Botones con corazones */
-        .heart-button {
-            background-color: #ff6699;
-            color: white;
-            border: none;
-            padding: 15px;
-            font-size: 18px;
-            border-radius: 50px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        .heart-button:hover {
-            background-color: #ff3366;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Te gustaria salir conmigo?</title>
 </head>
 <body>
-
-    <!-- 🎂 Imagen de torta o Clarence -->
-    <img src="1bd880101f795fdb83b8029a966937da.jpg" alt="Torta de chocolate o Clarence" class="cake">
-
-    <!-- 🎉 Serpentinas cayendo -->
-    <div class="serpentina" style="left: 20px;"></div>
-    <div class="serpentina" style="left: 100px;"></div>
-    <div class="serpentina" style="left: 200px;"></div>
-    <div class="serpentina" style="left: 300px;"></div>
-    <div class="serpentina" style="left: 400px;"></div>
-
-    <!-- 🌸 Flores animadas -->
-    <div class="flower" style="left: 30%;"></div>
-    <div class="flower" style="left: 50%;"></div>
-    <div class="flower" style="left: 70%;"></div>
-
-    <!-- ❤️ Botones con mensajes -->
-    <br>
-    <button class="heart-button" onclick="mostrarMensaje(1)">❤️</button>
-    <p id="mensaje1" style="display: none; font-size: 18px; color: #ff3366;">
-        Tu novia, tu bro, tu pana, tu amiga, tu mejor amiga, tu futura esposa, tu reguetonera, tu ya tú sabe mano etc., te invita hoooy 11 de Febrero a un día de picnic. 
-        ¡Ponte bien bien bieeeen bonito y sexy porque hoy es tuuu día! 🎉
-    </p>
-
-    <br>
-    <button class="heart-button" onclick="mostrarMensaje(2)">❤️</button>
-    <p id="mensaje2" style="display: none; font-size: 18px; color: #ff3366;">
-        ¡Tesperooo! 💕
-    </p>
-
-    <script>
-        function mostrarMensaje(num) {
-            let mensaje = document.getElementById("mensaje" + num);
-            if (mensaje.style.display === "none") {
-                mensaje.style.display = "block";
-            } else {
-                mensaje.style.display = "none";
-            }
-        }
-    </script>
-
+    <div class="container">
+        <div class="tenor-gif-embed" data-postid="2871482820979272488" data-share-method="host" data-aspect-ratio="1.28351" data-width="100%"><a href="https://tenor.com/view/mochi-pet-mochi-cat-cute-squiddy-gif-2871482820979272488">Mochi Pet GIF</a>from <a href="https://tenor.com/search/mochi-gifs">Mochi GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <h1>¿Te gustaria salir conmigo? 🥰</h1>
+        <p>Eres la persona mas especial del mundo</p>
+        <div class="btn">
+            <a href="si.html">SI</a>
+            <a href="no1.html">NO</a>
+        </div>
+    </div>
 </body>
 </html>
