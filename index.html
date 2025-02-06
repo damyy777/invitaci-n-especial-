@@ -3,48 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Cumple Yoelcito</title>
+    <title>🎂 ¡Feliz Cumple Yoelcito! 🎉</title>
     <style>
         body {
+            background-color: #ffccff; /* Fondo rosa pastel */
             text-align: center;
-            background-color: #ffdde1;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden; /* Para evitar barras de desplazamiento */
         }
 
-        .container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-        }
-
+        /* 🌸 Imagen de la torta o Clarence moviéndose lento */
         .cake {
             width: 250px;
+            animation: moveCake 5s infinite alternate ease-in-out;
+        }
+
+        @keyframes moveCake {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-20px); }
+        }
+
+        /* 🎉 Animación de serpentinas cayendo */
+        .serpentina {
             position: absolute;
-            top: 35%;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 1s infinite alternate;
+            width: 10px;
+            height: 100px;
+            background: linear-gradient(to bottom, red, yellow, blue, green, purple);
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: fall 3s infinite linear;
         }
 
-        @keyframes bounce {
-            0% { transform: translate(-50%, 0); }
-            100% { transform: translate(-50%, -10px); }
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); }
+            100% { transform: translateY(600px) rotate(360deg); }
         }
 
-        .flowers {
+        /* 🌼 Animación de flores creciendo */
+        .flower {
             position: absolute;
             bottom: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .flower {
             width: 50px;
+            height: 50px;
             opacity: 0;
-            animation: grow 2s forwards;
+            animation: grow 3s forwards;
         }
 
         @keyframes grow {
@@ -52,95 +54,61 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
-        .streamers {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100vh;
-            pointer-events: none;
-        }
-
-        .streamer {
-            position: absolute;
-            width: 10px;
-            height: 100px;
-            background: linear-gradient(to bottom, red, yellow, blue);
-            opacity: 0.8;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            0% { transform: translateY(-100px); opacity: 1; }
-            100% { transform: translateY(100vh); opacity: 0; }
-        }
-
+        /* 💖 Botones con corazones */
         .heart-button {
-            margin-top: 20px;
-            background-color: pink;
+            background-color: #ff6699;
             color: white;
             border: none;
-            padding: 15px 20px;
-            font-size: 20px;
-            border-radius: 50%;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 50px;
             cursor: pointer;
-            transition: 0.3s;
+            margin-top: 20px;
         }
 
         .heart-button:hover {
-            background-color: red;
-        }
-
-        #message {
-            margin-top: 20px;
-            font-size: 22px;
-            font-weight: bold;
-            color: darkred;
-        }
-
-        .clarence-img {
-            width: 300px;
-            position: absolute;
-            bottom: 5%;
-            left: 50%;
-            transform: translateX(-50%);
+            background-color: #ff3366;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>🎉 Feliz Cumple Yoelcito 🎉</h1>
-        
-        <img src="38b438ff5e2199041a57077fa8f2ff40 (1).jpg" class="cake-img">
-        
-        <div class="flowers">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Sunflower_from_Silesia2.jpg/120px-Sunflower_from_Silesia2.jpg" class="flower">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Rosa_Red_Chateau01.jpg/120px-Rosa_Red_Chateau01.jpg" class="flower">
-        </div>
+    <!-- 🎂 Imagen de torta o Clarence -->
+    <img src="URL_DE_LA_IMAGEN.png" alt="Torta de chocolate o Clarence" class="cake">
 
-        <div class="streamers">
-            <div class="streamer" style="left: 10%; animation-duration: 3s;"></div>
-            <div class="streamer" style="left: 30%; animation-duration: 2.5s;"></div>
-            <div class="streamer" style="left: 50%; animation-duration: 3.5s;"></div>
-            <div class="streamer" style="left: 70%; animation-duration: 2s;"></div>
-            <div class="streamer" style="left: 90%; animation-duration: 3s;"></div>
-        </div>
+    <!-- 🎉 Serpentinas cayendo -->
+    <div class="serpentina" style="left: 20px;"></div>
+    <div class="serpentina" style="left: 100px;"></div>
+    <div class="serpentina" style="left: 200px;"></div>
+    <div class="serpentina" style="left: 300px;"></div>
+    <div class="serpentina" style="left: 400px;"></div>
 
-        <button class="heart-button" onclick="showMessage(1)">❤️</button>
-        <button class="heart-button" onclick="showMessage(2)">❤️</button>
-        
-        <p id="message"></p>
+    <!-- 🌼 Flores creciendo -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Flower.svg/120px-Flower.svg.png" class="flower" style="left: 50px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Flower.svg/120px-Flower.svg.png" class="flower" style="left: 250px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Flower.svg/120px-Flower.svg.png" class="flower" style="left: 450px;">
 
-        <img src="1bd880101f795fdb83b8029a966937da.jpg" class="clarence-img">
-    </div>
+    <!-- ❤️ Botones con mensajes -->
+    <br>
+    <button class="heart-button" onclick="mostrarMensaje(1)">❤️</button>
+    <p id="mensaje1" style="display: none; font-size: 18px; color: #ff3366;">
+        Tu novia, tu bro, tu pana, tu amiga, tu mejor amiga, tu futura esposa, tu reguetonera, tu ya tú sabe mano etc., te invita hoooy 11 de Febrero a un día de picnic. 
+        ¡Ponte bien bien bieeeen bonito y sexy porque hoy es tuuu día! 🎉
+    </p>
+
+    <br>
+    <button class="heart-button" onclick="mostrarMensaje(2)">❤️</button>
+    <p id="mensaje2" style="display: none; font-size: 18px; color: #ff3366;">
+        ¡Tesperooo! 💕
+    </p>
 
     <script>
-        function showMessage(option) {
-            let message = document.getElementById("message");
-            if (option === 1) {
-                message.innerText = "Tu novia, tu bro, tu pana, tu amiga, tu mejor amiga, tu futura esposa, tu reguetonera, tu ya tú sabes mano, etc., te invita hoy 11 de Febrero a un día de picnic. ¡Ponte bien bien bien bonito y sexy porque hoy es tu día!";
+        function mostrarMensaje(num) {
+            let mensaje = document.getElementById("mensaje" + num);
+            if (mensaje.style.display === "none") {
+                mensaje.style.display = "block";
             } else {
-                message.innerText = "Tesperooo ❤️";
+                mensaje.style.display = "none";
             }
         }
     </script>
