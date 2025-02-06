@@ -3,113 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación Especial</title>
+    <title>Invitación de Cumpleaños</title>
     <style>
-        /* Estilos del pastel */
-        .pastel {
-            width: 300px;
-            height: 300px;
-            background-color: #f9d6a2;
-            border-radius: 50%;
-            position: relative;
+        body {
+            text-align: center;
+            background-color: #ffebcc;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .torta {
+            width: 250px;
+            height: 200px;
+            background-color: #8B4513;
+            border-radius: 10px;
             margin: 50px auto;
+            position: relative;
             display: flex;
-            justify-content: center;
             align-items: center;
-            flex-direction: column;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .numero {
-            font-size: 100px;
+            justify-content: center;
+            font-size: 50px;
             font-weight: bold;
-            color: #ff5f5f;
+            color: white;
         }
 
-        .velas {
+        .torta::before {
+            content: "";
             position: absolute;
-            top: 20px;
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 260px;
+            height: 50px;
+            background-color: #5d3212;
+            border-radius: 20px 20px 0 0;
         }
 
         .vela {
+            position: absolute;
+            top: -50px;
+            left: 50%;
             width: 10px;
-            height: 50px;
-            background-color: #fff;
-            border-radius: 50%;
-            margin: 0 5px;
+            height: 40px;
+            background-color: red;
+            transform: translateX(-50%);
         }
 
-        .llama {
+        .fuego {
+            position: absolute;
+            top: -60px;
+            left: 50%;
             width: 15px;
-            height: 15px;
-            background-color: #ffeb3b;
+            height: 25px;
+            background-color: orange;
             border-radius: 50%;
-            margin-top: -10px;
-            box-shadow: 0 0 10px rgba(255, 239, 59, 0.5);
+            transform: translateX(-50%);
         }
 
-        /* Estilo del mensaje */
-        h1 {
-            text-align: center;
-            font-family: Arial, sans-serif;
+        .serpentina {
+            position: absolute;
+            width: 5px;
+            height: 50px;
+            background-color: hsl(calc(360deg * var(--i) / 10), 100%, 50%);
+            top: -60px;
+            left: calc(10% * var(--i));
+            animation: caer 2s linear infinite;
+        }
+
+        @keyframes caer {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
         }
 
         .boton {
-            background-color: #ff5f5f;
+            margin: 20px;
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: red;
             color: white;
-            font-size: 18px;
-            padding: 10px 20px;
             border: none;
-            border-radius: 25px;
+            border-radius: 50px;
             cursor: pointer;
-            margin-top: 20px;
-            font-family: Arial, sans-serif;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
 
         .boton:hover {
-            background-color: #ff3b3b;
-        }
-
-        /* Estilo del corazon */
-        .corazon {
-            font-size: 30px;
-            margin-top: 20px;
-            text-align: center;
+            background-color: darkred;
         }
     </style>
 </head>
 <body>
-    <!-- Pastel de cumpleaños -->
-    <div class="pastel">
-        <div class="numero">20</div>
-        <div class="velas">
-            <div class="vela"><div class="llama"></div></div>
-            <div class="vela"><div class="llama"></div></div>
-            <div class="vela"><div class="llama"></div></div>
-        </div>
-    </div>
 
-    <!-- Mensaje de la invitación -->
-    <h1>Tu novia, bro, pana, futura esposa, tu reguetonera, te invita a un día de picnic. ¡Vestite bien lindo, aunque ya lo eres! Te amo</h1>
-
-    <!-- Botón con corazón -->
-    <button class="boton" onclick="mostrarMensaje()">¡Haz clic para un mensaje especial!</button>
-
-    <div id="mensaje" class="corazon" style="display: none;">
-        ❤️ Te amo ❤️
-    </div>
-
+    <!-- Serpentinas -->
     <script>
-        function mostrarMensaje() {
-            // Mostrar el mensaje cuando se haga clic en el botón
-            document.getElementById("mensaje").style.display = "block";
+        for (let i = 0; i < 10; i++) {
+            let serpentina = document.createElement("div");
+            serpentina.classList.add("serpentina");
+            serpentina.style.setProperty("--i", i);
+            document.body.appendChild(serpentina);
         }
     </script>
+
+    <!-- Torta -->
+    <div class="torta">
+        <span>20</span>
+        <div class="vela"></div>
+        <div class="fuego"></div>
+    </div>
+
+    <!-- Botones con mensajes -->
+    <button class="boton" onclick="mensaje1()">❤️</button>
+    <button class="boton" onclick="mensaje2()">❤️</button>
+
+    <script>
+        function mensaje1() {
+            alert("Tu novia, tu bro, tu pana, tu amiga, tu mejor amiga, tu futura esposa, tu reguetonera, tu ya tú sabe mano etc, te invita hoooy 11 de Febrero a un día de picnic sisisi y no comas mucho en tu casita. ¡Ponete bien bien bieeeen bonito y sepsi porque hoy es tuuu día!");
+        }
+
+        function mensaje2() {
+            alert("¡Tesperooo! ❤️");
+        }
+    </script>
+
 </body>
 </html>
