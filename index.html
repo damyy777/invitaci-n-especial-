@@ -3,149 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación de Cumpleaños</title>
+    <title>Feliz Cumple Yoelcito</title>
     <style>
         body {
             text-align: center;
-            background-color: #ffebcc;
+            background-color: #ffdde1;
             font-family: Arial, sans-serif;
             overflow: hidden;
         }
 
-        /* Serpentinas animadas */
-        .serpentina {
-            position: absolute;
-            width: 5px;
-            height: 50px;
-            background-color: hsl(calc(360deg * var(--i) / 10), 100%, 50%);
-            top: -60px;
-            left: calc(10% * var(--i));
-            animation: caer 2s linear infinite;
-        }
-
-        @keyframes caer {
-            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-        }
-
-        /* Contenedor de la torta */
-        .torta {
+        .container {
             position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .cake {
             width: 250px;
-            height: 200px;
-            margin: 50px auto;
-        }
-
-        /* Capas de la torta */
-        .capa {
-            width: 100%;
-            height: 50px;
-            background-color: #8B4513;
-            border-radius: 10px;
             position: absolute;
-        }
-
-        .capa:nth-child(1) { top: 0; }
-        .capa:nth-child(2) { top: 50px; }
-        .capa:nth-child(3) { top: 100px; }
-
-        /* Chocolate derretido */
-        .chocolate {
-            position: absolute;
-            top: 140px;
-            width: 100%;
-            height: 30px;
-            background-color: #5d3212;
-            border-radius: 50% 50% 0 0;
-        }
-
-        /* Número 20 */
-        .numero {
-            position: absolute;
-            top: 60px;
+            top: 35%;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 50px;
-            font-weight: bold;
-            color: white;
+            animation: bounce 1s infinite alternate;
         }
 
-        /* Vela y fuego */
-        .vela {
+        @keyframes bounce {
+            0% { transform: translate(-50%, 0); }
+            100% { transform: translate(-50%, -10px); }
+        }
+
+        .flowers {
             position: absolute;
-            top: -30px;
-            left: 50%;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .flower {
+            width: 50px;
+            opacity: 0;
+            animation: grow 2s forwards;
+        }
+
+        @keyframes grow {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .streamers {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+        }
+
+        .streamer {
+            position: absolute;
             width: 10px;
-            height: 40px;
-            background-color: red;
-            transform: translateX(-50%);
+            height: 100px;
+            background: linear-gradient(to bottom, red, yellow, blue);
+            opacity: 0.8;
+            animation: fall linear infinite;
         }
 
-        .fuego {
-            position: absolute;
-            top: -50px;
-            left: 50%;
-            width: 15px;
-            height: 25px;
-            background-color: orange;
-            border-radius: 50%;
-            transform: translateX(-50%);
+        @keyframes fall {
+            0% { transform: translateY(-100px); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
         }
 
-        /* Corazones clickeables */
-        .corazon {
-            font-size: 50px;
-            cursor: pointer;
-            display: block;
-            margin: 20px auto;
-        }
-
-        /* Estilo de mensajes */
-        .mensaje {
+        .heart-button {
+            margin-top: 20px;
+            background-color: pink;
+            color: white;
+            border: none;
+            padding: 15px 20px;
             font-size: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .heart-button:hover {
+            background-color: red;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 22px;
             font-weight: bold;
-            color: #8B4513;
-            margin-top: 10px;
-            display: none;
+            color: darkred;
+        }
+
+        .clarence-img {
+            width: 300px;
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
         }
     </style>
 </head>
 <body>
 
-    <!-- Serpentinas -->
-    <script>
-        for (let i = 0; i < 10; i++) {
-            let serpentina = document.createElement("div");
-            serpentina.classList.add("serpentina");
-            serpentina.style.setProperty("--i", i);
-            document.body.appendChild(serpentina);
-        }
-    </script>
+    <div class="container">
+        <h1>🎉 Feliz Cumple Yoelcito 🎉</h1>
+        
+        <img src="TU_IMAGEN_DE_TORTA_AQUI.png" class="cake">
+        
+        <div class="flowers">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Sunflower_from_Silesia2.jpg/120px-Sunflower_from_Silesia2.jpg" class="flower">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Rosa_Red_Chateau01.jpg/120px-Rosa_Red_Chateau01.jpg" class="flower">
+        </div>
 
-    <!-- Torta mejorada -->
-    <div class="torta">
-        <div class="capa"></div>
-        <div class="capa"></div>
-        <div class="capa"></div>
-        <div class="chocolate"></div>
-        <div class="numero">20</div>
-        <div class="vela"></div>
-        <div class="fuego"></div>
+        <div class="streamers">
+            <div class="streamer" style="left: 10%; animation-duration: 3s;"></div>
+            <div class="streamer" style="left: 30%; animation-duration: 2.5s;"></div>
+            <div class="streamer" style="left: 50%; animation-duration: 3.5s;"></div>
+            <div class="streamer" style="left: 70%; animation-duration: 2s;"></div>
+            <div class="streamer" style="left: 90%; animation-duration: 3s;"></div>
+        </div>
+
+        <button class="heart-button" onclick="showMessage(1)">❤️</button>
+        <button class="heart-button" onclick="showMessage(2)">❤️</button>
+        
+        <p id="message"></p>
+
+        <img src="TU_IMAGEN_DE_CLARENCE_AQUI.png" class="clarence-img">
     </div>
 
-    <!-- Corazones clickeables -->
-    <span class="corazon" onclick="mostrarMensaje('mensaje1')">❤️</span>
-    <p id="mensaje1" class="mensaje">
-        Tu novia, tu bro, tu pana, tu amiga, tu mejor amiga, tu futura esposa, tu reguetonera, tu ya tú sabe mano etc, te invita hoooy 11 de Febrero a un día de picnic.  
-        ¡Ponete bien bien bieeeen bonito y sepsi porque hoy es tuuu día!
-    </p>
-
-    <span class="corazon" onclick="mostrarMensaje('mensaje2')">❤️</span>
-    <p id="mensaje2" class="mensaje">¡T'esperooo! ❤️</p>
-
     <script>
-        function mostrarMensaje(id) {
-            document.getElementById(id).style.display = "block";
+        function showMessage(option) {
+            let message = document.getElementById("message");
+            if (option === 1) {
+                message.innerText = "Tu novia, tu bro, tu pana, tu amiga, tu mejor amiga, tu futura esposa, tu reguetonera, tu ya tú sabes mano, etc., te invita hoy 11 de Febrero a un día de picnic. ¡Ponte bien bien bien bonito y sexy porque hoy es tu día!";
+            } else {
+                message.innerText = "Tesperooo ❤️";
+            }
         }
     </script>
 
