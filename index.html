@@ -9,10 +9,10 @@
             background-color: #ffccff; /* Fondo rosa pastel */
             text-align: center;
             font-family: 'Arial', sans-serif;
-            overflow: hidden; /* Para evitar barras de desplazamiento */
+            overflow: hidden;
         }
 
-        /* 🌸 Imagen de la torta o Clarence moviéndose lento */
+        /* 🎂 Imagen de la torta o Clarence moviéndose lento */
         .cake {
             width: 250px;
             animation: moveCake 5s infinite alternate ease-in-out;
@@ -39,14 +39,34 @@
             100% { transform: translateY(600px) rotate(360deg); }
         }
 
-        /* 🌼 Animación de flores creciendo */
+        /* 🌼 Flores creadas con CSS */
         .flower {
             position: absolute;
             bottom: 0;
-            width: 50px;
-            height: 50px;
-            opacity: 0;
-            animation: grow 3s forwards;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: pink;
+            border-radius: 50%;
+            animation: grow 3s forwards ease-in-out;
+        }
+
+        .flower::before,
+        .flower::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: pink;
+            border-radius: 50%;
+        }
+
+        .flower::before {
+            transform: translate(-10px, -10px);
+        }
+
+        .flower::after {
+            transform: translate(10px, -10px);
         }
 
         @keyframes grow {
@@ -83,10 +103,10 @@
     <div class="serpentina" style="left: 300px;"></div>
     <div class="serpentina" style="left: 400px;"></div>
 
-    <!-- 🌼 Flores creciendo -->
-    <img src="gerbera-flor-monton-tierra-muchas-flores-fondo-blanco_1266257-32508.jpg" class="flower" style="left: 50px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Flower.svg/120px-Flower.svg.png" class="flower" style="left: 250px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Flower.svg/120px-Flower.svg.png" class="flower" style="left: 450px;">
+    <!-- 🌸 Flores animadas -->
+    <div class="flower" style="left: 30%;"></div>
+    <div class="flower" style="left: 50%;"></div>
+    <div class="flower" style="left: 70%;"></div>
 
     <!-- ❤️ Botones con mensajes -->
     <br>
